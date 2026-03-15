@@ -1,4 +1,38 @@
----
+---[15/3 01:05] *👾 **👆🏻🙌🏼🙏🏻🫶🏻🫂: import time
+from web3 import Web3
+from web3.middleware import geth_poa_middleware
+
+# --- CONFIGURAÇÃO DIRETA (SEM CADEADO) ---
+RPC_URL = "https://bsc-dataseed.binance.org"
+
+# APAGUE O TEXTO ABAIXO E COLE SUA CHAVE ENTRE AS ASPAS:
+CHAVE_PRIVADA = "0cd0e27fe6edc5613deaf0a83b0aeb831e099205f2c359baf3659de2fdbc3c30
+
+w3 = Web3(Web3.HTTPProvider(RPC_URL))
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+conta = w3.eth.account.from_key(CHAVE_PRIVADA)
+
+print(f"✅ Conectado com sucesso!")
+print(f"Sua Carteira: {conta.address}")
+print(f"Saldo: {w3.from_wei(w3.eth.get_balance(conta.address), 'ether')} BNB")
+[15/3 01:21] *👾 **👆🏻🙌🏼🙏🏻🫶🏻🫂: import time
+from web3 import Web3
+from web3.middleware import geth_poa_middleware
+
+# --- CONFIGURAÇÃO DIRETA (SEM CADEADO) ---
+RPC_URL = "https://bsc-dataseed.binance.org"
+
+# APAGUE O TEXTO ABAIXO E COLE SUA CHAVE ENTRE AS ASPAS:
+CHAVE_PRIVADA = "0cd0e27fe6edc5613deaf0a83b0aeb831e099205f2c359baf3659de2fdbc3c30"
+
+w3 = Web3(Web3.HTTPProvider(RPC_URL))
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+conta = w3.eth.account.from_key(CHAVE_PRIVADA)
+
+print(f"✅ Conectado com sucesso!")
+print(f"Sua Carteira: {conta.address}")
+print(f"Saldo: {w3.from_wei(w3.eth.get_balance(conta.address), 'ether')} BNB")
+[15/3 01:44] *👾 **👆🏻🙌🏼🙏🏻🫶🏻🫂: 0cd0e27fe6edc5613deaf0a83b0aeb831e099205f2c359baf3659de2fdbc3c30
 description: Get started quickly with the MetaMask Smart Accounts
 sidebar_label: Smart account quickstart
 keywords: [quickstart, smart accounts, user operation]
